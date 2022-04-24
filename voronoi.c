@@ -83,19 +83,18 @@ static void do_drawing(cairo_t *cr, GtkWidget *widget)
       for (int k = 0; k < number_nodes ; k++ ) 
       {
         /* Calculate distances between the pixels and the Veronoi center nodes */	
-       
         distance = (i - node[k].x) * (i - node[k].x) + (j - node[k].y) * (j - node[k].y); 
 		  
 		if (distance < distance_min)
 		{
-          distance_min = distance;
-          dummy_color_index = k;         
+          	    distance_min = distance;
+         	    dummy_color_index = k;         
 		}	
 	  }
   	 
 	  cairo_set_source_rgb(cr, node[dummy_color_index].color[0], node[dummy_color_index].color[1], node[dummy_color_index].color[2]);
-      cairo_arc(cr, i, j, 7, 0, 2*M_PI);
-      cairo_fill(cr);
+      	  cairo_arc(cr, i, j, 7, 0, 2*M_PI);
+      	  cairo_fill(cr);
     }
   }
   cairo_stroke(cr); 
@@ -108,10 +107,10 @@ static void do_drawing(cairo_t *cr, GtkWidget *widget)
   
   for (int i = 0; i < number_nodes ; i++ ) 
   {    
-  cairo_arc(cr, node[i].x, node[i].y, 6, 0, 2*M_PI);
-  cairo_fill(cr);
+  	cairo_arc(cr, node[i].x, node[i].y, 6, 0, 2*M_PI);
+  	cairo_fill(cr);
   }
-  cairo_stroke(cr); 
+  	cairo_stroke(cr); 
   
 }
 
